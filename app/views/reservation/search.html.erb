@@ -1,0 +1,236 @@
+<%= content_for :title, 'Buscar estacionamientos' %>
+
+<%= content_for :head do %>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+<% end %>
+
+<%= content_for :body do %>
+  <section>
+    <div class="container-fluid">
+      <div class="call-to-action call-to-action-colored">
+        <div class="col-md-12">
+          <form class="form">
+            <div class="row">
+              <div class="col-md-4">
+                <label for="address">Dirección, distrito</label>
+                <div class="input-group">
+                  <input type="text" id="address" class="form-control required" placeholder="Dirección, distrito" aria-required="true">
+                  <div class="input-group-addon"><i class="fa fa-map-marker"></i></div>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <label for="select_type">Tipo</label>
+                <select class="form-control" id="select_type">
+                  <option>.....</option>
+                  <option>Interior</option>
+                  <option>Exterior</option>
+                  <option>Aire libre</option>
+                </select>
+                <label for="select_location">Ubicación</label>
+                <select class="form-control" id="select_location">
+                  <option>.....</option>
+                  <option>Sótano</option>
+                  <option>1er piso</option>
+                  <option>2do piso</option>
+                  <option>3er piso</option>
+                  <option>Otros</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label for="from_date">Fecha inicio</label>
+                <div class="input-group">
+                  <input type="text" id="from_date" class="form-control required" placeholder="DD/MM/YYYY" aria-required="true">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                </div>
+                <label for="to_date">Fecha fin</label>
+                <div class="input-group">
+                  <input type="text" id="to_date" class="form-control required" placeholder="DD/MM/YYYY" aria-required="true">
+                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <label for="from_hour">Hora inicio</label>
+                <div class="input-group">
+                  <select class="form-control" id="from_hour">
+                    <option>..</option>
+                    <option>00:00</option>
+                    <option>01:00</option>
+                    <option>02:00</option>
+                    <option>03:00</option>
+                    <option>04:00</option>
+                    <option>05:00</option>
+                    <option>06:00</option>
+                    <option>07:00</option>
+                    <option>08:00</option>
+                    <option>09:00</option>
+                    <option>10:00</option>
+                    <option>11:00</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+                    <option>18:00</option>
+                    <option>19:00</option>
+                    <option>20:00</option>
+                    <option>21:00</option>
+                    <option>22:00</option>
+                    <option>23:00</option>
+                  </select>
+                  <div class="input-group-addon"><i class="fa fa-clock-o"></i></div>
+                </div>
+                <label for="to_hour">Hora fin</label>
+                <div class="input-group">
+                  <select class="form-control" id="to_hour">
+                    <option>...</option>
+                    <option>00:59</option>
+                    <option>01:59</option>
+                    <option>02:59</option>
+                    <option>03:59</option>
+                    <option>04:59</option>
+                    <option>05:59</option>
+                    <option>06:59</option>
+                    <option>07:59</option>
+                    <option>08:59</option>
+                    <option>09:59</option>
+                    <option>10:59</option>
+                    <option>11:59</option>
+                    <option>12:59</option>
+                    <option>13:59</option>
+                    <option>14:59</option>
+                    <option>15:59</option>
+                    <option>16:59</option>
+                    <option>17:59</option>
+                    <option>18:59</option>
+                    <option>19:59</option>
+                    <option>20:59</option>
+                    <option>21:59</option>
+                    <option>22:59</option>
+                    <option>23:59</option>
+                  </select>
+                  <div class="input-group-addon"><i class="fa fa-clock-o"></i></div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <br>
+                <button type="submit" class="btn btn-light btn-outline" id="submit">Buscar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="result" class="row hide">
+        <div class="col-lg-6">
+          <div class="widget-shop">
+            <div class="product">
+              <div class="product-image">
+                <a href="#"><img
+                class="img-thumbnail"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjI3NWEyNGNlNyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2Mjc1YTI0Y2U3Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA2MjUiIHk9Ijc0LjU1NjI1Ij4xNDB4MTQwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="Shop product image!">
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-category">&nbsp;</div>
+                <div class="product-title">
+                  <h3><a href="#">Lorem ipsum</a></h3>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+                <div class="row">
+                  <div class="col-lg-9">
+                    <div class="product-rate">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="product-price">
+                      <ins>S/ 6.00 x hora</ins>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="/reservation/review" class="btn btn-xs left">Reservar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="product-image">
+                <a href="#"><img
+                class="img-thumbnail"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjI3NWEyNGNlNyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2Mjc1YTI0Y2U3Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA2MjUiIHk9Ijc0LjU1NjI1Ij4xNDB4MTQwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="Shop product image!">
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-category">&nbsp;</div>
+                <div class="product-title">
+                  <h3><a href="#">Lorem ipsum</a></h3>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+                <div class="row">
+                  <div class="col-lg-9">
+                    <div class="product-rate">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="product-price">
+                      <ins>S/ 5.00 x hora</ins>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="/reservation/review" class="btn btn-xs left">Reservar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div id="map"></div>
+          <script>
+              function initMap() {
+                  var uluru = {lat: -25.363, lng: 131.044};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 4,
+                      center: {lat: -12.0262676, lng: -77.1278657}
+                  });
+                  var marker = new google.maps.Marker({
+                      position: {lat: -12.0262676, lng: -77.1278657},
+                      map: map
+                  });
+              }
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%= content_for :body_end do %>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKaalD6aoqaV-eaUeIlCgtbtTr47vx_Ik&callback=initMap"></script>
+
+  <script>
+      $(document).on('click', '#submit', function (event) {
+
+          $('#result').addClass('hide');
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          $('#result').removeClass('hide').addClass('animated visible zoomIn').attr({
+              'data-animation': 'zoomIn',
+              'data-animation-delay': 500
+          });
+      });
+  </script>
+<% end %>

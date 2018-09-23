@@ -1,0 +1,91 @@
+<%= content_for :title, 'Revisar reserva' %>
+
+<%= content_for :body do %>
+  <section>
+    <div class="container">
+      <div class="row call-to-action call-to-action-border">
+        <div class="col-lg-12">
+          <% if request.fullpath === '/reservation/review' %>
+          <h2 class="text-colored">Revisar datos de la reserva</h2>
+          <% end %>
+          <% if request.fullpath === '/reservation/confirm' %>
+          <h2>Reserva confirmada<btn class="btn btn-colored btn-outline right"><strong>Código reserva: </strong> XYA-142</btn></h2>
+          <% end %>
+          <br>
+        </div>
+        <div class="col-lg-8">
+          <div class="widget-shop">
+            <div class="product">
+              <div class="product-image">
+                <a href="#"><img
+                class="img-thumbnail"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjI3NWEyNGNlNyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2Mjc1YTI0Y2U3Ij48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ0LjA2MjUiIHk9Ijc0LjU1NjI1Ij4xNDB4MTQwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="Shop product image!">
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-category">&nbsp;</div>
+                <div class="product-title">
+                  <h3><a href="#">Lorem ipsum</a></h3>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+                <div class="row">
+                  <div class="col-lg-9">
+                    <div class="product-rate">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="col-lg-3 product-price">
+                      <ins>S/ 5.00 x hora</ins>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <label for="from_date">Fecha inicio</label>
+          <div class="input-group">
+            DD/MM/YYYY
+            <%= %>
+            <div class="icon icon-calendar"></div>
+          </div>
+          <label for="to_date">Fecha fin</label>
+          <div class="input-group">
+            DD/MM/YYYY
+            <%= %>
+            <div class="icon icon-calendar"></div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <label for="from_hour">Hora inicio</label>
+          <div class="input-group">
+            HH:MM
+            <%= %>
+            <div class="icon icon-clock"></div>
+          </div>
+          <label for="to_hour">Hora fin</label>
+          <div class="input-group">
+            HH:MM
+            <%= %>
+            <div class="icon icon-clock"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-right">
+            <% if request.fullpath === '/reservation/review' %>
+            <form action="/reservation/review" method="post">
+              <button type="submit" class="btn btn-colored btn-outline">CONFIRMAR RESERVA <i class="fa fa-save"></i></button>
+            </form>
+            <% end %>
+            <% if request.fullpath === '/reservation/confirm' %>
+              <a  class="btn btn-colored btn-outline" href="/reservation/view">Mis reservas</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </section>
+<% end %>

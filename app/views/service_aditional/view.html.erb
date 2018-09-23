@@ -1,0 +1,124 @@
+<%= content_for :title, 'Registrar Servicios Adicionales' %>
+
+<%= content_for :body do %>
+
+<section id="page-content" class="sidebar-left">
+	
+	<div class="container">
+		<div class="row">
+			
+			<!-- post content -->
+			<div class="content col-md-10">
+				<div class="hr-title hr-long center"><abbr>Registro de Servicios Adicionales</abbr> </div>
+				<div class="card">
+					<div class="card-body">
+						
+						<div class="col-md-6">
+							<div class="col-md-5">
+								<label>Codigo de Estacionamiento</label>
+							</div>
+							<div class="col-md-7">
+								<label  for="Co_Estacionamiento">ID12231221</label>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<div class="col-md-5">
+								<label>Direccion de Estacionamiento</label>
+							</div>
+							<div class="col-md-7">
+								<label  for="Tx_Direccion_Estacionamiento">Javier Prado</label>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+				<%= form_tag("/registerServiceAditional", method: "get") do %>
+				
+				<!--Default Form-->
+				<hr class="space">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<form>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										
+										<label class="upper" for="Fl_Tipo_Servicio">Tipo de Servicio</label>
+										
+										<div class="col-md-7"> 
+											<%= select_tag "" , options_for_select([["Choose", ""],["Nocturno", "N"], ["Diurno", "D"]]), {:class => 'form-control',:required => true,:id => 'Fl_Tipo_Servicio',:placeholder => 'Tipo de Servicio',:name =>'Fl_Tipo_Servicio'} %>
+										</div>
+										
+										
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										
+										<label class="upper" for="No_Servicio">Nombre de Servicio</label>
+										<div class="col-md-7"> 
+											<%= text_field_tag(:No_Servicio,nil,{:class => 'form-control required',:required => true,:id => 'No_Servicio',:placeholder => 'Nombre de Servicio',:name =>'No_Servicio','aria-require' => 'true'}) %>
+										</div>
+										
+										
+									</div>
+								</div>
+							</div>
+							
+								<hr class="space">
+							
+							<div class="row">
+							
+									<div class="form-group">
+										
+										<label class="col-md-5" for="Tx_Descripcion_Servicio">Descripcion de Servicio</label>
+										<div class="col-md-7"> 
+											<%=  text_area_tag(:Tx_Descripcion_Servicio,nil,{:class => 'form-control required',:required => true,:id => 'Tx_Descripcion_Servicio',:rows => '9',:placeholder => 'Descripcion de Servicio',:name =>'Tx_Descripcion_Servicio'}) %>
+										</div>
+										
+									</div>
+								
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										
+										<label class="upper" for="Ss_Precio">Tarifa</label>
+										<div class="col-md-7">
+											<%= text_field_tag(:Ss_Precio,nil,{:class => 'form-control required',:required => true,:id => 'Ss_Precio',:placeholder => 'Tarifa',:name =>'Ss_Precio'}) %>
+										</div>
+										
+									</div>
+								</div> 
+							</div>
+							
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group text-center">
+										<button class="btn btn-colored" type="submit">Save</button>
+										<button class="btn btn-colored" type="">Cancel</button>
+									</div>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+				</div>
+				<!--END: Default Form-->
+				<hr class="space">
+				<% end %>
+			</div>
+			
+			
+			<!-- SIDEBAR -->
+			<%= render partial: 'layouts/sidebar' %>
+			<!-- END: SIDEBAR -->
+		</div>
+	</div>
+</section>
+
+<% end %>
+

@@ -1,0 +1,172 @@
+<%= content_for :title, 'Registrar' %>
+
+<%= content_for :body do %>
+  <section>
+    <div class="hr-title hr-long center"><abbr>Registrar</abbr></div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 animated visible zoomIn" data-animation="zoomIn" data-animation-delay="500">
+      <form class="form-transparent-grey" method="post">
+        <form data-toggle="validator" role="form">
+           
+          <div class="row">
+            <div class="col-md-12">
+              <label class="upper" for="name">TIPO DE CUENTA</label><br>
+                <label class="radio-inline">
+                  <input type="radio" name="optradio"  required>CLIENTE</label>
+                <label class="radio-inline">
+                  <input type="radio" name="optradio"  required>PROPIETARIO</label>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="upper" for="name">Nombres</label>
+                <input type="text" class="form-control required" name="senderName" maxlength= 50 placeholder="Ingresar Nombre" id="name" aria-required="true" onkeypress="return validar(event)" placeholder="Nombres" required>
+              </div>
+            </div>
+     
+           <div class="col-md-4">
+            <div class="form-group">
+              <label class="upper" for="name">Apellido Paterno</label>
+                <input type="text" class="form-control required" name="senderName" maxlength= 50 placeholder="Ingresar Apellido Paterno" id="name" aria-required="true" onkeypress="return validar(event)" placeholder="Nombres" required>
+            </div>
+           </div>
+           
+           <div class="col-md-4">
+            <div class="form-group">
+              <label class="upper" for="name">Apellido Materno</label>
+                <input type="text" class="form-control required" name="senderName" maxlength= 50 placeholder="Ingresar Apellido Materno" id="name" aria-required="true" onkeypress="return validar(event)" placeholder="Nombres" required>
+            </div>
+         </div>
+         </div>
+ 
+      <div class="row">
+        <div class="col-md-2">
+          <div class="form-group">
+              <label class="upper" for="name">Tipo de Documento</label>
+                <select name="lista" required>
+                  <option value="Seleccionar">Seleccionar...</option>
+                  <option value="DNI">DNI</option>
+                  <option value="RUC">RUC</option>
+                  <option value="Pasaporte">Pasaporte</option>
+                  <option value="Otros">Otros</option>
+                </select>
+          </div>
+        </div>
+            
+            
+          <div class="col-md-3">
+            <div class="form-group">
+              <label class="upper" for="name">Numero de Documento</label>
+                 <input type="text" class="form-control required" name="senderName" maxlength= 15 placeholder="Numero de Documento" id="name" aria-required="True" required>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+                <label class="upper" for="name">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" placeholder="FechaNacimiento" aria-describedby="basic-addon1" required>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label class="upper" for="name">Numero de Celular</label>
+                <input type="tel" class="form-control required" name="Telefono" maxlength= 9 placeholder="Numero de Celular" id="name" aria-required="True" onkeypress="return valida(event)" required>
+            </div>
+          </div>
+ 
+          <div class="col-md-2">
+            <label class="upper" for="name">SEXO</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="underwear" required>
+                  Masculino
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="underwear" required>
+                  Femenino
+                </label>
+              </div>
+          </div>
+         </div>
+ 
+       <div class="row">
+         <div class="form-group col-md-4">
+              <label for="inputEmail" class="control-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico" data-error="Por favor ingrese un correo electronico" required>
+              <div class="help-block with-errors"></div>
+          </div>
+    
+         <div class="form-group col-md-4">
+              <label for="inputEmail" class="control-label">.</label>
+                <input type="email" class="form-control" id="inputEmail" data-match="#inputEmail" placeholder="Confirmar Correo Electronico" data-error="Por favor ingrese la confirmacion de correo electronico" required>
+              <div class="help-block with-errors"></div>
+          </div>
+    </div>
+      
+    <div class="row">
+          <div class="form-group col-md-5">
+          <label for="inputPassword" class="control-label">Contraseña</label>
+            <div class="form-inline row">
+              <div class="form-group col-sm-6">
+                <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Contraseña" required>
+                <div class="help-block">Minimo 6 Caracteres</div>
+              </div>
+              <div class="form-group col-sm-6">
+                <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirmar Contraseña" required>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>
+          </div>
+     </div>
+     
+     
+          <script>
+              function valida(e){
+                  tecla = (document.all) ? e.keyCode : e.which;
+                  //Tecla de retroceso para borrar, siempre la permite
+                    if (tecla==8){
+                      return true;
+                    }
+                  // Patron de entrada, en este caso solo acepta numeros
+                  patron =/[0-9]/;
+                  tecla_final = String.fromCharCode(tecla);
+                  return patron.test(tecla_final);
+                  }
+          </script>
+
+          <script>
+              function validar(e){
+                  tecla2= (document.all) ? e.keyCode : e.which;
+                  //Tecla de retroceso para borrar, siempre la permite
+                    if (tecla2==8){
+                      return true;
+                    }
+                  // Patron de entrada, en este caso solo acepta letras
+                  patron2=/[A-Za-z\s]/;
+                  tecla_final2 = String.fromCharCode(tecla2);
+                  return patron2.test(tecla_final2);
+                  }
+          </script>
+ 
+
+       <div class="row">
+            <div class="col-md-12">
+              <div class="form-group text-center">
+                <button class="btn btn-default" type="submit" value="Enviar informacion"><i class="fa fa-save"></i>&nbsp;Guardar</button>
+                <button class="btn btn-default" type="reset" value="Borrar Informacion"><i class="fa fa-ban"></i>&nbsp;Cancelar</button>
+              </div>
+          </div>
+        </form>
+
+      </form>
+    
+      </div>
+    </div>
+    </div>
+    </section>
+<% end %>
