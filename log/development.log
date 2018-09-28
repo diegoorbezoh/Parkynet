@@ -4619,3 +4619,146 @@ Processing by FrontendController#index as HTML
 Completed 200 OK in 130ms (Views: 129.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-27 23:46:39 +0100
+Processing by FrontendController#index as HTML
+  Parameters: {"alias"=>"index"}
+  Rendering index.html.erb within layouts/frontend
+  Rendered index.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 119ms (Views: 118.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-28 23:45:27 +0100
+Processing by FrontendController#index as HTML
+  Parameters: {"alias"=>"index"}
+  Rendering index.html.erb within layouts/frontend
+  Rendered index.html.erb within layouts/frontend (10.7ms)
+  Rendered layouts/_topbar.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 715ms (Views: 154.7ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2018-09-28 23:49:48 +0100
+Processing by FrontendController#register as HTML
+  Parameters: {"alias"=>"register"}
+  Rendering register.html.erb within layouts/frontend
+  Rendered register.html.erb within layouts/frontend (2.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 164ms (Views: 163.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-28 23:49:53 +0100
+Processing by FrontendController#login as HTML
+  Parameters: {"alias"=>"login"}
+  Rendering login.html.erb within layouts/frontend
+  Rendered login.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 145ms (Views: 144.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-28 23:49:56 +0100
+Processing by FrontendController#index as HTML
+  Parameters: {"alias"=>"index"}
+  Rendering index.html.erb within layouts/frontend
+  Rendered index.html.erb within layouts/frontend (2.0ms)
+  Rendered layouts/_topbar.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 110ms (Views: 109.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-28 23:50:33 +0100
+Processing by FrontendController#login as HTML
+  Parameters: {"alias"=>"login"}
+  Rendering login.html.erb within layouts/frontend
+  Rendered login.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 130ms (Views: 129.5ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2018-09-28 23:50:43 +0100
+Processing by FrontendController#register as HTML
+  Parameters: {"alias"=>"register"}
+  Rendering register.html.erb within layouts/frontend
+  Rendered register.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 114ms (Views: 113.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-09-28 23:52:07 +0100
+Processing by FrontendController#login_validation as HTML
+  Parameters: {"user_email"=>"test@test", "user_password"=>"[FILTERED]", "alias"=>"login_validation"}
+  Rendering login.html.erb within layouts/frontend
+  Rendered login.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 105ms (Views: 104.7ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2018-09-28 23:52:34 +0100
+Processing by FrontendController#register as HTML
+  Parameters: {"alias"=>"register"}
+  Rendering register.html.erb within layouts/frontend
+  Rendered register.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 125ms (Views: 124.6ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2018-09-28 23:53:25 +0100
+Processing by FrontendController#register_post as HTML
+  Parameters: {"optradio"=>"on", "senderName"=>"48345670", "lista"=>"DNI", "Telefono"=>"943665497", "underwear"=>"on", "alias"=>"register_post"}
+  Rendering register.html.erb within layouts/frontend
+  Rendered register.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 115ms (Views: 114.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-09-28 23:53:32 +0100
+Processing by FrontendController#login as HTML
+  Parameters: {"alias"=>"login"}
+  Rendering login.html.erb within layouts/frontend
+  Rendered login.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 187ms (Views: 185.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-09-28 23:53:43 +0100
+Processing by FrontendController#login_validation as HTML
+  Parameters: {"user_email"=>"diego.orbezoh@gmail.com", "user_password"=>"[FILTERED]", "alias"=>"login_validation"}
+  Rendering login.html.erb within layouts/frontend
+  Rendered login.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 132ms (Views: 129.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-28 23:57:09 +0100
+Processing by FrontendController#index as HTML
+  Parameters: {"alias"=>"index"}
+  Rendering index.html.erb within layouts/frontend
+  Rendered index.html.erb within layouts/frontend (1.0ms)
+  Rendered layouts/_topbar.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 129ms (Views: 128.2ms)
+
+
