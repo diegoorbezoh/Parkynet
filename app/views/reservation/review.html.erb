@@ -78,11 +78,11 @@
           <div class="col-lg-12 text-right">
             <% if request.fullpath === '/reservation/review' %>
             <form action="/reservation/review" method="post">
-              <button type="submit" class="btn btn-colored btn-outline">CONFIRMAR RESERVA <i class="fa fa-save"></i></button>
+              <button type="submit" class="btn btn-danger btn-danger">CONFIRMAR RESERVA <i class="fa fa-save"></i></button>
             </form>
             <% end %>
             <% if request.fullpath === '/reservation/confirm' %>
-              <a  class="btn btn-colored btn-outline" href="/reservation/view">Mis reservas</a>
+              <a  class="btn btn-danger btn-danger" href="/reservation/view">Mis reservas</a>
             <% end %>
           </div>
         </div>
